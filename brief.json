@@ -1,0 +1,313 @@
+{
+  "run_id": "run-1779062335699",
+  "job_index": 1,
+  "params": {
+    "owner_user_id": "user-1774822953462",
+    "owner_username": "admin",
+    "owner_display_name": "Administrator",
+    "count": 3,
+    "archetype": "generator",
+    "market": "France",
+    "language": "fr",
+    "country": "FR",
+    "brief": "Un outil interactif pour concevoir des ambiances lumineuses harmonieuses, en ajustant la température de coule…",
+    "notes": "Créez des palettes d'éclairage personnalisées pour vos pièces en fonction de l'heure, de la saison et de l'ambiance souhaitée.\nCible les décorateurs, les propriétaires et les professionnels de l'immobilier cherchant à améliorer l'atmosphère de leurs espaces. Permet de visualiser l'impact de différents éclairages avant une installation réelle.",
+    "import_notes": "",
+    "growth_job_id": "",
+    "growth_slug": "",
+    "growth_kind": "",
+    "external_site_request_id": "",
+    "external_client_ref": "",
+    "external_source_label": "",
+    "dashboard_mode": "builder",
+    "network_site_format": "forum",
+    "network_primary_topic": "",
+    "network_primary_geo": "",
+    "network_domain_pool": "forum-de-jeu.shop",
+    "network_hosting_pool": "4vps:netoper | server_id=447345 | ip=5.253.59.18 | ssh_user=root | ssh_port=22",
+    "network_dns_strategy": "auto_pool_assign",
+    "network_domain_flow": "manual",
+    "network_content_strategy": "",
+    "network_model_concept": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_seo": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_build": "google/gemini-2.5-flash",
+    "network_model_qa": "anthropic/claude-haiku-4.5",
+    "network_model_growth": "google/gemini-2.5-flash-lite:nitro",
+    "network_blueprint_id": "",
+    "mode": "production",
+    "run_kind": "generated_batch",
+    "publish_target": "render",
+    "requested_publish_target": "render",
+    "allow_url_fallback": false,
+    "railway_project_id_override": "",
+    "railway_environment_id_override": "",
+    "railway_service_id_override": "",
+    "railway_service_name_override": "",
+    "github_repo_private": true,
+    "stage_models": {
+      "ideation": "google/gemini-2.5-flash-lite:nitro",
+      "spec": "google/gemini-2.5-flash",
+      "copy": "google/gemini-2.5-flash-lite:nitro",
+      "qa": "anthropic/claude-haiku-4.5",
+      "escalation": "anthropic/claude-sonnet-4.6"
+    },
+    "archetype_display": "mixed batch",
+    "archetype_mix": [
+      "generator",
+      "tool",
+      "calculator"
+    ],
+    "forced_design_theme": "aurora-glass",
+    "forced_structure_preset": "bento-signal",
+    "site_idea_title": "Générateur d'Ambiance Lumineuse pour Espaces Intérieurs",
+    "site_idea_summary": "Créez des palettes d'éclairage personnalisées pour vos pièces en fonction de l'heure, de la saison et de l'ambiance souhaitée."
+  },
+  "site_spec": {
+    "slug": "generateur-d-ambiance-lumineuse-pour-espaces-in-d330ffee",
+    "theme": {
+      "name": "Aurora Glass",
+      "slug": "aurora-glass",
+      "eyebrow": "Luminous Utility",
+      "family": "aurora-glass",
+      "moods": [
+        "premium",
+        "luminous",
+        "modern",
+        "futuristic"
+      ],
+      "archetypes": [
+        "tool",
+        "generator",
+        "calculator"
+      ],
+      "niches": [
+        "saas",
+        "automation",
+        "ai",
+        "analytics",
+        "digital utility"
+      ],
+      "keywords": [
+        "smart",
+        "assistant",
+        "platform",
+        "workflow",
+        "automation"
+      ],
+      "token_index": [
+        "analytics",
+        "assistant",
+        "aurora",
+        "automation",
+        "calculator",
+        "digital",
+        "futuristic",
+        "generator",
+        "glass",
+        "luminous",
+        "modern",
+        "platform",
+        "premium",
+        "saas",
+        "smart",
+        "tool",
+        "utility",
+        "workflow"
+      ],
+      "font_embed": "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap",
+      "display_font": "\"Sora\", sans-serif",
+      "body_font": "\"Inter\", sans-serif",
+      "layout": "showcase",
+      "card_style": "glass",
+      "button_style": "gradient",
+      "decor_style": "orbs",
+      "hero_template": "0.94fr 1.06fr",
+      "seo_template": "1.18fr 0.82fr",
+      "feature_columns": 2,
+      "faq_columns": 3,
+      "hero_min_height": "78vh",
+      "panel_radius": "34px",
+      "card_radius": "26px",
+      "chip_radius": "999px",
+      "button_radius": "18px",
+      "outline_width": "1px",
+      "backdrop_blur": "16px",
+      "palette": {
+        "bg": "linear-gradient(135deg, #0f172a 0%, #1d4ed8 42%, #9333ea 100%)",
+        "surface": "rgba(11, 18, 32, 0.62)",
+        "surface_border": "rgba(255,255,255,0.16)",
+        "text": "#eff6ff",
+        "muted": "#bfdbfe",
+        "accent": "#7dd3fc",
+        "accent_alt": "#c084fc",
+        "hero_glow": "rgba(125, 211, 252, 0.26)",
+        "button_text": "#08111f",
+        "panel_alt": "rgba(255,255,255,0.08)",
+        "shadow": "0 28px 90px rgba(15, 23, 42, 0.36)",
+        "input_fill": "rgba(255,255,255,0.08)"
+      }
+    },
+    "structure": {
+      "name": "Bento Signal",
+      "slug": "bento-signal",
+      "hero_variant": "command",
+      "proof_variant": "badges",
+      "section_order": [
+        "proof",
+        "features",
+        "seo",
+        "faq"
+      ],
+      "feature_columns": 4,
+      "faq_columns": 2,
+      "family": "modular-grid",
+      "moods": [
+        "modular",
+        "curated",
+        "technical"
+      ],
+      "archetypes": [
+        "tool",
+        "generator",
+        "calculator"
+      ],
+      "niches": [
+        "ai tools",
+        "dashboards",
+        "productivity",
+        "research"
+      ],
+      "keywords": [
+        "bento",
+        "cards",
+        "signal",
+        "system"
+      ],
+      "token_index": [
+        "badges",
+        "bento",
+        "calculator",
+        "cards",
+        "command",
+        "curated",
+        "dashboards",
+        "faq",
+        "features",
+        "generator",
+        "grid",
+        "modular",
+        "productivity",
+        "proof",
+        "research",
+        "seo",
+        "signal",
+        "system",
+        "technical",
+        "tool",
+        "tools"
+      ]
+    },
+    "render_direction": "signal-bento",
+    "render_direction_name": "Signal Bento",
+    "page_blueprint": "briefing-board",
+    "page_blueprint_name": "Briefing Board",
+    "title": "Générateur d'Ambiance Lumineuse pour Espaces Intérieurs",
+    "tagline": "Paramètres d'Ambiance",
+    "description": "Créez des palettes d",
+    "feature_prefix": "Bloc",
+    "action": "Générer la palette",
+    "cta_primary": "Générer l'Ambiance",
+    "cta_secondary": "Consulter la FAQ",
+    "inputs": [
+      {
+        "id": "base_color",
+        "label": "Couleur de base",
+        "type": "text",
+        "placeholder": "#ff5db1",
+        "weight": 1.0
+      },
+      {
+        "id": "palette_style",
+        "label": "Direction de palette",
+        "type": "select",
+        "options": [
+          {
+            "id": "chrome-pop",
+            "label": "Chrome Pop",
+            "multiplier": 1
+          },
+          {
+            "id": "digital-candy",
+            "label": "Digital Candy",
+            "multiplier": 1
+          },
+          {
+            "id": "acid-pastel",
+            "label": "Acid Pastel",
+            "multiplier": 1
+          },
+          {
+            "id": "night-neon",
+            "label": "Night Neon",
+            "multiplier": 1
+          }
+        ],
+        "weight": 1.0
+      },
+      {
+        "id": "vibrancy",
+        "label": "Intensité visuelle",
+        "type": "number",
+        "placeholder": "8",
+        "weight": 0.5
+      }
+    ],
+    "hero_metrics": [
+      {
+        "value": "Signal Bento",
+        "label": "Cadence"
+      },
+      {
+        "value": "3",
+        "label": "Entrées"
+      },
+      {
+        "value": "Palette générée",
+        "label": "Sortie"
+      }
+    ],
+    "trust_labels": [
+      "Signal Bento",
+      "Générer l'Ambiance",
+      "Palette générée",
+      "Utilitaire immédiat",
+      "Structure SEO claire"
+    ],
+    "result_label": "Palette générée",
+    "result_unit": "",
+    "runtime_mode": "palette_generator",
+    "page_variant": "console",
+    "faq_topic": "Générateur d'Ambiance Lumineuse pour Espaces Intérieurs",
+    "faq_entries": [
+      {
+        "question": "Pourquoi utiliser cet outil pour Générateur d'Ambiance Lumineuse pour Espaces Intérieurs ?",
+        "answer": "Il aide à cadrer le besoin rapidement et à orienter vers une prochaine action claire sur le marché France."
+      },
+      {
+        "question": "Le résultat est-il immédiat ?",
+        "answer": "Oui. L'interface est pensée pour une réponse rapide, lisible et exploitable dès la première interaction."
+      },
+      {
+        "question": "Cette page est-elle adaptée au SEO ?",
+        "answer": "Oui. La structure mélange utilité, clarté éditoriale et signaux de confiance sans surcharger l'expérience."
+      }
+    ],
+    "seo_paragraphs": [
+      "Cette page capte une intention forte autour de Générateur d'Ambiance Lumineuse pour Espaces Intérieurs et la transforme en action utile pour un public situé sur France.",
+      "Le format hero-first accélère la compréhension, réduit les frictions et améliore la lisibilité sur mobile comme sur desktop.",
+      "Le socle reste volontairement simple pour faciliter les tests, la QA continue et les variations SEO."
+    ],
+    "document_html": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Générateur d&#x27;Ambiance Lumineuse pour Espaces Intérieurs | Paramètres d&#x27;Ambiance</title>\n    <meta name=\"description\" content=\"Créez des palettes d\">\n    <style>\n        :root {\n            --bg-color: #0d1117;\n            --card-bg: #161b22;\n            --text-color: #c9d1d9;\n            --primary-color: #58a6ff;\n            --accent-color: #8b949e;\n            --border-color: #30363d;\n            --gradient-start: #0f151c;\n            --gradient-end: #1a2028;\n            --font-family-grotesk: \"Inter\", sans-serif;\n            --font-family-editorial: \"Georgia\", serif;\n        }\n\n        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Georgia:wght@400;700&display=swap');\n\n        body {\n            font-family: var(--font-family-grotesk);\n            background-color: var(--bg-color);\n            color: var(--text-color);\n            margin: 0;\n            padding: 0;\n            line-height: 1.6;\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n        }\n\n        header {\n            width: 100%;\n            padding: 40px 20px;\n            text-align: center;\n            background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);\n            border-bottom: 1px solid var(--border-color);\n            box-sizing: border-box;\n        }\n\n        h1 {\n            font-family: var(--font-family-grotesk);\n            font-weight: 700;\n            font-size: 2.8em;\n            color: var(--primary-color);\n            margin-bottom: 10px;\n        }\n\n        header p {\n            font-family: var(--font-family-editorial);\n            font-size: 1.2em;\n            color: var(--accent-color);\n            max-width: 800px;\n            margin: 0 auto;\n        }\n\n        .container {\n            display: grid;\n            grid-template-columns: 1fr;\n            gap: 25px;\n            width: 90%;\n            max-width: 1200px;\n            margin: 40px auto;\n        }\n\n        @media (min-width: 768px) {\n            .container {\n                grid-template-columns: 1fr 2fr;\n            }\n        }\n\n        .card {\n            background-color: var(--card-bg);\n            border: 1px solid var(--border-color);\n            border-radius: 8px;\n            padding: 25px;\n            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);\n        }\n\n        h2 {\n            font-family: var(--font-family-grotesk);\n            font-weight: 600;\n            font-size: 1.8em;\n            color: var(--primary-color);\n            margin-top: 0;\n            margin-bottom: 20px;\n        }\n\n        label {\n            display: block;\n            margin-bottom: 8px;\n            color: var(--text-color);\n            font-weight: 600;\n        }\n\n        select, input[type=\"range\"] {\n            width: 100%;\n            padding: 10px;\n            margin-bottom: 20px;\n            border: 1px solid var(--border-color);\n            background-color: var(--bg-color);\n            color: var(--text-color);\n            border-radius: 5px;\n            box-sizing: border-box;\n            -webkit-appearance: none;\n            appearance: none;\n        }\n\n        select {\n            height: 40px;\n        }\n\n        input[type=\"range\"] {\n            height: 5px;\n            background: var(--border-color);\n            outline: none;\n            opacity: 0.7;\n            transition: opacity .2s;\n        }\n\n        input[type=\"range\"]:hover {\n            opacity: 1;\n        }\n\n        input[type=\"range\"]::-webkit-slider-thumb {\n            -webkit-appearance: none;\n            appearance: none;\n            width: 20px;\n            height: 20px;\n            border-radius: 50%;\n            background: var(--primary-color);\n            cursor: pointer;\n            border: 1px solid var(--primary-color);\n        }\n\n        input[type=\"range\"]::-moz-range-thumb {\n            width: 20px;\n            height: 20px;\n            border-radius: 50%;\n            background: var(--primary-color);\n            cursor: pointer;\n            border: 1px solid var(--primary-color);\n        }\n\n        button {\n            background-color: var(--primary-color);\n            color: var(--bg-color);\n            padding: 12px 25px;\n            border: none;\n            border-radius: 5px;\n            cursor: pointer;\n            font-size: 1.1em;\n            font-weight: 600;\n            transition: background-color 0.3s ease, transform 0.2s ease;\n        }\n\n        button:hover {\n            background-color: #72baff;\n            transform: translateY(-2px);\n        }\n\n        .result-section {\n            display: none;\n            padding: 25px;\n            border-left: 5px solid var(--primary-color);\n            background-color: var(--card-bg);\n            border-radius: 8px;\n            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);\n            position: relative;\n            overflow: hidden;\n            min-height: 200px;\n        }\n\n        .result-section::before {\n            content: '';\n            position: absolute;\n            top: 0;\n            left: 0;\n            width: 100%;\n            height: 100%;\n            background: linear-gradient(45deg, rgba(88, 166, 255, 0.05) 0%, rgba(88, 166, 255, 0) 50%);\n            pointer-events: none;\n        }\n\n        .result-content {\n            position: relative;\n            z-index: 1;\n        }\n\n        .result-content h3 {\n            font-family: var(--font-family-grotesk);\n            font-weight: 600;\n            font-size: 1.5em;\n            color: var(--primary-color);\n            margin-top: 0;\n            margin-bottom: 15px;\n        }\n\n        .result-content p {\n            margin-bottom: 10px;\n            color: var(--text-color);\n        }\n\n        .result-content strong {\n            color: var(--primary-color);\n        }\n\n        .result-content .color-swatch {\n            display: inline-block;\n            width: 30px;\n            height: 30px;\n            border-radius: 50%;\n            border: 1px solid var(--border-color);\n            vertical-align: middle;\n            margin-left: 10px;\n        }\n\n        .ambiance-preview {\n            margin-top: 25px;\n            padding: 20px;\n            border: 1px dashed var(--accent-color);\n            border-radius: 8px;\n            background-color: var(--bg-color);\n            text-align: center;\n            transition: background-color 0.5s ease;\n        }\n\n        .ambiance-preview span {\n            display: block;\n            margin-top: 10px;\n            font-size: 0.9em;\n            color: var(--accent-color);\n        }\n\n        .seo-section {\n            width: 90%;\n            max-width: 1200px;\n            margin: 60px auto;\n            padding: 30px;\n            background-color: var(--card-bg);\n            border: 1px solid var(--border-color);\n            border-radius: 8px;\n        }\n\n        .seo-section h2 {\n            text-align: center;\n            margin-bottom: 30px;\n        }\n\n        .seo-section p {\n            font-family: var(--font-family-editorial);\n            font-size: 1em;\n            color: var(--accent-color);\n            margin-bottom: 15px;\n            text-align: justify;\n        }\n\n        .seo-section ul {\n            list-style-type: disc;\n            margin-left: 20px;\n            padding-left: 0;\n            color: var(--accent-color);\n        }\n\n        .seo-section li {\n            margin-bottom: 8px;\n        }\n    </style>\n    <meta name=\"robots\" content=\"index, follow\">\n    <link rel=\"canonical\" href=\"https://generateur-d-ambiance-lumineuse-pour-espaces-in-d330ffee.onrender.com\">\n    <meta property=\"og:title\" content=\"Générateur d&#x27;Ambiance Lumineuse pour Espaces Intérieurs\">\n    <meta property=\"og:description\" content=\"Créez des palettes d\">\n    <meta property=\"og:url\" content=\"https://generateur-d-ambiance-lumineuse-pour-espaces-in-d330ffee.onrender.com\">\n    <meta property=\"og:type\" content=\"website\">\n    <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"Générateur d'Ambiance Lumineuse pour Espaces Intérieurs\", \"description\": \"Créez des palettes d\", \"url\": \"https://generateur-d-ambiance-lumineuse-pour-espaces-in-d330ffee.onrender.com\", \"applicationCategory\": \"UtilityApplication\", \"operatingSystem\": \"Web Browser\"}</script>\n</head>\n<body data-site-slug=\"generateur-d-ambiance-lumineuse-pour-espaces-in-d330ffee\" data-runtime-mode=\"palette_generator\">\n    <header>\n        <h1>Générateur d'Ambiance Lumineuse</h1>\n        <p>Créez des palettes d'éclairage personnalisées pour vos espaces intérieurs. Harmonisez la lumière avec l'heure, la saison et l'ambiance désirée pour une atmosphère parfaite.</p>\n    </header>\n\n    <div class=\"container\">\n        <div class=\"card\">\n            <h2>Paramètres d'Ambiance</h2>\n            <form id=\"tool-form\">\n                <label for=\"heure\">Heure de la journée :</label>\n                <select id=\"heure\" name=\"heure\">\n                    <option value=\"matin\">Matin (6h-10h)</option>\n                    <option value=\"jour\">Jour (10h-17h)</option>\n                    <option value=\"soir\">Soir (17h-21h)</option>\n                    <option value=\"nuit\">Nuit (21h-6h)</option>\n                </select>\n\n                <label for=\"saison\">Saison :</label>\n                <select id=\"saison\" name=\"saison\">\n                    <option value=\"printemps\">Printemps</option>\n                    <option value=\"ete\">Été</option>\n                    <option value=\"automne\">Automne</option>\n                    <option value=\"hiver\">Hiver</option>\n                </select>\n\n                <label for=\"ambiance\">Ambiance souhaitée :</label>\n                <select id=\"ambiance\" name=\"ambiance\">\n                    <option value=\"reposante\">Reposante et Détente</option>\n                    <option value=\"dynamique\">Dynamique et Créative</option>\n                    <option value=\"cosy\">Chaleureuse et Cosy</option>\n                    <option value=\"elegante\">Élégante et Sophistiquée</option>\n                </select>\n\n                <label for=\"temperature\">Température de couleur (Kelvin) : <span id=\"temperature-value\">2700K</span></label>\n                <input type=\"range\" id=\"temperature\" name=\"temperature\" min=\"2000\" max=\"6500\" value=\"2700\" step=\"100\">\n\n                <label for=\"intensite\">Intensité Lumineuse (%) : <span id=\"intensite-value\">70%</span></label>\n                <input type=\"range\" id=\"intensite\" name=\"intensite\" min=\"10\" max=\"100\" value=\"70\" step=\"5\">\n\n                <button type=\"submit\" id=\"tool-submit\">Générer l'Ambiance</button>\n            </form>\n        </div>\n\n        <div class=\"card result-section\" id=\"tool-result\">\n            <div class=\"result-content\">\n                <h2 id=\"result-headline\">Votre Palette Lumineuse Idéale</h2>\n                <p>Voici la recommandation pour votre ambiance :</p>\n                <p><strong>Température de Couleur :</strong> <span id=\"result-temp\"></span> <span class=\"color-swatch\" id=\"color-swatch-temp\"></span></p>\n                <p><strong>Intensité :</strong> <span id=\"result-intensite\"></span></p>\n                <p><strong>Ambiance suggérée :</strong> <span id=\"result-ambiance-text\"></span></p>\n                <div class=\"ambiance-preview\" id=\"ambiance-preview\">\n                    Prévisualisation de l'ambiance\n                    <span>L'impact visuel peut varier selon les écrans.</span>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <section class=\"seo-section\">\n        <h2>Optimiser l'Éclairage de Votre Intérieur : Guide et Outils</h2>\n        <p>Dans l'univers du design d'intérieur, l'éclairage ne se limite pas à la simple fonctionnalité ; il est un pilier fondamental de la création d'une atmosphère. Un bon éclairage peut transformer radicalement une pièce, influençant notre humeur, notre productivité et notre bien-être général. Pour les architectes d'intérieur, les propriétaires soucieux de leur cadre de vie ou les agents immobiliers valorisant leurs biens, comprendre et maîtriser la lumière est essentiel.</p>\n        <p>Notre générateur d'ambiance lumineuse vous offre une approche novatrice pour explorer les multiples facettes de l'éclairage. Fini les tâtonnements ! Visualisez l'impact de différentes températures de couleur (du blanc chaud cosy au blanc froid énergisant) et d'intensités lumineuses variées, adaptées à chaque moment de la journée et à toutes les saisons. Que vous cherchiez à créer un espace de travail stimulant, une chambre reposante ou un salon accueillant pour vos convives, notre outil est là pour vous guider.</p>\n        <p>Les mots-clés qui résonnent avec vos besoins :</p>\n        <ul>\n            <li><strong>Lumière ambiante</strong> : Fondamentale pour l'atmosphère générale d'une pièce.</li>\n            <li><strong>Température de couleur Kelvin</strong> : Mesure cruciale pour définir le rendu de la lumière (chaude ou froide).</li>\n            <li><strong>Éclairage intérieur design</strong> : Des solutions esthétiques et fonctionnelles pour chaque espace.</li>\n            <li><strong>Ambiance lumineuse maison</strong> : Créez une atmosphère personnalisée dans chaque pièce.</li>\n            <li><strong>Conception éclairage professionnel</strong> : Des outils pour les experts en aménagement.</li>\n            <li><strong>Simulation éclairage avant achat</strong> : Testez l'effet de vos choix avant d'investir.</li>\n            <li><strong>Harmonie lumineuse</strong> : Atteignez l'équilibre parfait entre confort et esthétique.</li>\n            <li><strong>Impact éclairage sur humeur</strong> : Comprenez l'influence de la lumière sur le bien-être.</li>\n        </ul>\n        <p>Notre générateur vous aide à concrétiser vos idées d'éclairage, en vous offrant des recommandations concrètes et une prévisualisation visuelle. Prenez le contrôle de l'ambiance de vos espaces et illuminez votre quotidien avec intelligence et style.</p>\n    </section>\n\n    <script>\n        document.addEventListener('DOMContentLoaded', () => {\n            const form = document.getElementById('tool-form');\n            const submitButton = document.getElementById('tool-submit');\n            const resultSection = document.getElementById('tool-result');\n            const resultTemp = document.getElementById('result-temp');\n            const resultIntensite = document.getElementById('result-intensite');\n            const resultAmbianceText = document.getElementById('result-ambiance-text');\n            const colorSwatchTemp = document.getElementById('color-swatch-temp');\n            const ambiancePreview = document.getElementById('ambiance-preview');\n            const temperatureInput = document.getElementById('temperature');\n            const temperatureValueSpan = document.getElementById('temperature-value');\n            const intensiteInput = document.getElementById('intensite');\n            const intensiteValueSpan = document.getElementById('intensite-value');\n\n            temperatureInput.addEventListener('input', () => {\n                temperatureValueSpan.textContent = `${temperatureInput.value}K`;\n            });\n\n            intensiteInput.addEventListener('input', () => {\n                intensiteValueSpan.textContent = `${intensiteInput.value}%`;\n            });\n\n            form.addEventListener('submit', (event) => {\n                event.preventDefault();\n\n                const heure = document.getElementById('heure').value;\n                const saison = document.getElementById('saison').value;\n                const ambiance = document.getElementById('ambiance').value;\n                const temperature = parseInt(temperatureInput.value);\n                const intensite = parseInt(intensiteInput.value);\n\n                let recommendedTemp = temperature;\n                let recommendedIntensite = intensite;\n                let ambianceText = '';\n                let bgColor = '#0d1117'; // Default for preview\n\n                // Adjust based on heure\n                if (heure === 'matin') {\n                    if (recommendedTemp > 4000) recommendedTemp = 4000;\n                    if (recommendedIntensite < 50) recommendedIntensite = 50;\n                    ambianceText += 'Une lumière fraîche et dynamisante pour bien commencer la journée. ';\n                } else if (heure === 'jour') {\n                    if (recommendedTemp < 4500) recommendedTemp = 4500;\n                    if (recommendedIntensite < 70) recommendedIntensite = 70;\n                    ambianceText += 'Une lumière neutre et claire pour une productivité optimale. ';\n                } else if (heure === 'soir') {\n                    if (recommendedTemp > 3000) recommendedTemp = 3000;\n                    if (recommendedIntensite > 60) recommendedIntensite = 60;\n                    ambianceText += 'Une lumière chaude et douce pour se détendre après la journée. ';\n                } else if (heure === 'nuit') {\n                    if (recommendedTemp > 2500) recommendedTemp = 2500;\n                    if (recommendedIntensite > 30) recommendedIntensite = 30;\n                    ambianceText += 'Une lumière très chaude et tamisée pour un repos optimal. ';\n                }\n\n                // Adjust based on saison\n                if (saison === 'printemps' || saison === 'ete') {\n                    if (recommendedTemp < 3500) recommendedTemp += 500; // Slightly cooler\n                    if (recommendedIntensite < 60) recommendedIntensite += 10;\n                    ambianceText += 'Écho à la clarté naturelle de l\\'extérieur. ';\n                } else { // automne, hiver\n                    if (recommendedTemp > 3000) recommendedTemp -= 500; // Slightly warmer\n                    if (recommendedIntensite > 70) recommendedIntensite -= 10;\n                    ambianceText += 'Apport de chaleur et de confort. ';\n                }\n\n                // Adjust based on ambiance\n                if (ambiance === 'reposante') {\n                    if (recommendedTemp > 2700) recommendedTemp = 2700;\n                    if (recommendedIntensite > 40) recommendedIntensite = 40;\n                    ambianceText += 'Idéal pour la relaxation et la lecture. ';\n                } else if (ambiance === 'dynamique') {\n                    if (recommendedTemp < 4000) recommendedTemp = 4000;\n                    if (recommendedIntensite < 80) recommendedIntensite = 80;\n                    ambianceText += 'Parfait pour le travail ou les activités nécessitant de la concentration. ';\n                } else if (ambiance === 'cosy') {\n                    if (recommendedTemp > 2500) recommendedTemp = 2500;\n                    if (recommendedIntensite > 50) recommendedIntensite = 50;\n                    ambianceText += 'Crée une atmosphère intime et chaleureuse. ';\n                } else if (ambiance === 'elegante') {\n                    if (recommendedTemp < 3000 || recommendedTemp > 4500) recommendedTemp = 3500; // Neutral elegant\n                    if (recommendedIntensite < 60) recommendedIntensite = 60;\n                    ambianceText += 'Met en valeur les détails avec subtilité. ';\n                }\n\n                // Ensure bounds\n                recommendedTemp = Math.max(2000, Math.min(6500, recommendedTemp));\n                recommendedIntensite = Math.max(10, Math.min(100, recommendedIntensite));\n\n                resultTemp.textContent = `${recommendedTemp}K`;\n                resultIntensite.textContent = `${recommendedIntensite}%`;\n                resultAmbianceText.textContent = ambianceText.trim();\n\n                // Convert Kelvin to RGB approximation for color swatch and preview background\n                function kelvinToRgb(k) {\n                    let r, g, b;\n                    k /= 100;\n                    if (k <= 66) {\n                        r = 255;\n                        g = 99.4708025861 * Math.log(k) - 161.1195681661;\n                        if (k < 19) b = 0;\n                        else b = 138.5177312231 * Math.log(k - 10) - 305.0447927307;\n                    } else {\n                        r = 329.698727446 * Math.pow(k - 60, -0.1332047592);\n                        g = 288.1221695283 * Math.pow(k - 60, -0.0755148492);\n                        b = 255;\n                    }\n                    return {\n                        r: Math.min(255, Math.max(0, Math.round(r))),\n                        g: Math.min(255, Math.max(0, Math.round(g))),\n                        b: Math.min(255, Math.max(0, Math.round(b)))\n                    };\n                }\n\n                const rgb = kelvinToRgb(recommendedTemp);\n                const brightnessFactor = recommendedIntensite / 100;\n\n                // Adjust brightness for the background preview to make text readable\n                const previewR = Math.round(rgb.r * brightnessFactor * 0.5); // reduced brightness for background\n                const previewG = Math.round(rgb.g * brightnessFactor * 0.5);\n                const previewB = Math.round(rgb.b * brightnessFactor * 0.5);\n                \n                // For the swatch, represent the color more directly, but still influenced by intensity\n                const swatchR = Math.round(rgb.r * brightnessFactor);\n                const swatchG = Math.round(rgb.g * brightnessFactor);\n                const swatchB = Math.round(rgb.b * brightnessFactor);\n\n                colorSwatchTemp.style.backgroundColor = `rgb(${swatchR}, ${swatchG}, ${swatchB})`;\n                ambiancePreview.style.backgroundColor = `rgb(${previewR}, ${previewG}, ${previewB})`;\n                ambiancePreview.style.color = (previewR + previewG + previewB) / 3 > 128 ? 'black' : 'white'; // Contrast text for preview\n\n                resultSection.style.display = 'block';\n            });\n        });\n    </script>\n<div id=\"qa-smoke-result\" hidden></div>\n<script id=\"farmbuilder-affiliate-helper\">\n(function () {\n  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};\n  document.addEventListener(\"click\", function (event) {\n    const target = event.target.closest(\"[data-affiliate-slot]\");\n    if (!target) return;\n    const slot = target.getAttribute(\"data-affiliate-slot\");\n    const href = window.__UTILITY_AFFILIATE_MAP[slot];\n    if (!href) return;\n    if (target.tagName && target.tagName.toLowerCase() === \"a\") {\n      target.setAttribute(\"href\", href);\n      target.removeAttribute(\"rel\");\n      return;\n    }\n    event.preventDefault();\n    window.open(href, \"_blank\");\n  }, true);\n})();\n</script>\n<script id=\"farmbuilder-functional-qa\">\n(function () {\n  function marker() {\n    let node = document.getElementById(\"qa-smoke-result\");\n    if (node) return node;\n    node = document.createElement(\"div\");\n    node.id = \"qa-smoke-result\";\n    node.hidden = true;\n    document.body.appendChild(node);\n    return node;\n  }\n\n  let qaFinished = false;\n  let qaWatchdog = null;\n\n  function normalize(text) {\n    return String(text || \"\").replace(/\\s+/g, \" \").trim();\n  }\n\n  function findForm() {\n    return document.getElementById(\"tool-form\") || document.querySelector(\"form\");\n  }\n\n  function findResult() {\n    return (\n      document.getElementById(\"tool-result\") ||\n      document.querySelector(\"[data-result]\") ||\n      document.querySelector(\".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis\")\n    );\n  }\n\n  function primaryAction(form) {\n    if (!form) return null;\n    return (\n      document.getElementById(\"tool-submit\") ||\n      form.querySelector(\"#tool-submit\") ||\n      form.querySelector(\"[data-primary-action]\") ||\n      form.querySelector(\"button[type=submit]\") ||\n      form.querySelector(\"button\") ||\n      form.querySelector(\"input[type=submit]\")\n    );\n  }\n\n  function resultSignature(node) {\n    if (!node) return \"\";\n    const text = normalize(node.textContent);\n    const html = normalize(node.innerHTML).slice(0, 600);\n    return `${text}||${html}`;\n  }\n\n  function resultHeadline(node) {\n    if (!node) return \"\";\n    const heading = node.querySelector(\"h1, h2, h3, strong, b\");\n    return normalize(heading ? heading.textContent : \"\");\n  }\n\n  function sampleText(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"} ${field.placeholder || \"\"}`.toLowerCase();\n    if (/email/.test(key)) return \"bonjour@example.com\";\n    if (/url|site|website|lien/.test(key)) return \"https://example.com/offre-solaire\";\n    if (/phone|tel|mobile/.test(key)) return \"0612345678\";\n    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return \"Paris\";\n    if (/orientation/.test(key)) return \"sud\";\n    if (/keyword|theme|topic|sujet|subject/.test(key)) return \"energie solaire domestique\";\n    if (/titre|title/.test(key)) return \"Simulateur solaire maison\";\n    if (/nom|name|project/.test(key)) return \"Projet Horizon\";\n    if (/description|notes|content|message/.test(key)) return \"Maison individuelle exposee sud avec toiture exploitable.\";\n    return field.placeholder || \"France\";\n  }\n\n  function sampleNumber(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"}`.toLowerCase();\n    if (/inclinaison|angle|slope/.test(key)) return \"30\";\n    if (/surface|size|m2|sqm/.test(key)) return \"28\";\n    if (/annee|year/.test(key)) return \"2024\";\n    if (/prix|price|budget|cost|amount|montant/.test(key)) return \"12000\";\n    const min = Number(field.min || \"\");\n    const max = Number(field.max || \"\");\n    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {\n      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));\n    }\n    if (Number.isFinite(min)) return String(Math.max(min, 12));\n    if (Number.isFinite(max)) return String(Math.min(max, 12));\n    return field.value || \"12\";\n  }\n\n  function applySample(field) {\n    const tag = (field.tagName || \"\").toLowerCase();\n    const type = (field.type || \"\").toLowerCase();\n    if (field.disabled) return;\n    if (type === \"hidden\" || type === \"submit\" || type === \"button\" || type === \"reset\" || type === \"image\" || type === \"file\") {\n      return;\n    }\n    const currentValue = normalize(field.value);\n    if (tag === \"select\") {\n      if (currentValue) return;\n      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];\n      if (option) field.value = option.value;\n      return;\n    }\n    if (type === \"checkbox\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"radio\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"date\") {\n      if (currentValue) return;\n      field.value = \"2026-03-01\";\n      return;\n    }\n    if (type === \"email\") {\n      if (currentValue) return;\n      field.value = \"bonjour@example.com\";\n      return;\n    }\n    if (type === \"url\") {\n      if (currentValue) return;\n      field.value = \"https://example.com/offre-solaire\";\n      return;\n    }\n    if (type === \"tel\") {\n      if (currentValue) return;\n      field.value = \"0612345678\";\n      return;\n    }\n    if (type === \"color\") {\n      if (currentValue) return;\n      field.value = \"#2f855a\";\n      return;\n    }\n    if (type === \"number\" || type === \"range\") {\n      if (currentValue) return;\n      field.value = sampleNumber(field);\n      return;\n    }\n    if (currentValue) return;\n    field.value = sampleText(field);\n  }\n\n  function stamp(status, detail, headline, primary) {\n    if (qaFinished) return;\n    qaFinished = true;\n    if (qaWatchdog) {\n      window.clearTimeout(qaWatchdog);\n      qaWatchdog = null;\n    }\n    const node = marker();\n    node.dataset.status = status;\n    node.dataset.mode = \"native-form\";\n    node.dataset.detail = detail || \"\";\n    node.dataset.headline = headline || \"\";\n    node.dataset.primary = primary || \"\";\n    node.dataset.viewport = window.innerWidth <= 640 ? \"mobile\" : \"desktop\";\n    window.setTimeout(function () {\n      try {\n        window.stop();\n      } catch (_error) {}\n    }, 0);\n  }\n\n  function installModalGuards() {\n    const noop = function () {};\n    const approve = function () { return true; };\n    const empty = function () { return \"\"; };\n    try { window.alert = noop; } catch (_error) {}\n    try { window.confirm = approve; } catch (_error) {}\n    try { window.prompt = empty; } catch (_error) {}\n  }\n\n  function triggerAction(form, action) {\n    try {\n      if (typeof form.requestSubmit === \"function\") {\n        form.requestSubmit(action || undefined);\n        return;\n      }\n    } catch (_error) {}\n    if (action && typeof action.click === \"function\") {\n      action.click();\n      return;\n    }\n    form.dispatchEvent(new Event(\"submit\", { bubbles: true, cancelable: true }));\n  }\n\n  function inspectResult(before, attemptsLeft) {\n    const result = findResult();\n    if (!result) {\n      stamp(\"fail\", \"La zone de resultat est introuvable.\", \"\");\n      return;\n    }\n    const after = resultSignature(result);\n    const text = normalize(result.textContent);\n    if (after && after !== before && text.length >= 24) {\n      const primary = result.querySelector(\"a[href], button[data-href], [data-primary-url]\") || document.querySelector(\"#tool-result a[href]\");\n      stamp(\"pass\", \"Le formulaire natif a mis a jour la zone de resultat.\", resultHeadline(result), primary ? (primary.getAttribute(\"href\") || primary.getAttribute(\"data-primary-url\") || \"\") : \"\");\n      return;\n    }\n    if (attemptsLeft > 0) {\n      window.setTimeout(function () {\n        inspectResult(before, attemptsLeft - 1);\n      }, 250);\n      return;\n    }\n    stamp(\"fail\", \"La zone de resultat n'a pas renvoye de contenu exploitable.\", resultHeadline(result));\n  }\n\n  function runSmoke() {\n    const params = new URLSearchParams(window.location.search);\n    if (params.get(\"__qa\") !== \"functional\") return;\n    qaWatchdog = window.setTimeout(function () {\n      stamp(\"fail\", \"QA smoke timed out before the page reported a usable result.\", \"\");\n    }, 7000);\n    const form = findForm();\n    if (!form) {\n      stamp(\"fail\", \"Le formulaire principal est introuvable.\", \"\");\n      return;\n    }\n    const result = findResult();\n    const before = resultSignature(result);\n    installModalGuards();\n    try {\n      form.querySelectorAll(\"input, select, textarea\").forEach(applySample);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke sample failed: ${error.message}` : \"QA smoke sample failed before submit.\", \"\");\n      return;\n    }\n    const action = primaryAction(form);\n    try {\n      triggerAction(form, action);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke submit failed: ${error.message}` : \"QA smoke submit failed.\", \"\");\n      return;\n    }\n    inspectResult(before, 10);\n  }\n\n  window.addEventListener(\"error\", function (event) {\n    const message = event && event.message ? event.message : \"JavaScript runtime error during QA smoke.\";\n    stamp(\"fail\", `QA smoke JS error: ${message}`, \"\");\n  }, { once: true });\n\n  window.addEventListener(\"unhandledrejection\", function (event) {\n    const reason = event && event.reason;\n    const detail = typeof reason === \"string\"\n      ? reason\n      : reason && reason.message\n        ? reason.message\n        : \"Unhandled promise rejection during QA smoke.\";\n    stamp(\"fail\", `QA smoke rejection: ${detail}`, \"\");\n  }, { once: true });\n\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", function () {\n      window.setTimeout(runSmoke, 60);\n    }, { once: true });\n  } else {\n    window.setTimeout(runSmoke, 60);\n  }\n})();\n</script>\n</body>\n</html>",
+    "generation_mode": "direct_html"
+  }
+}
