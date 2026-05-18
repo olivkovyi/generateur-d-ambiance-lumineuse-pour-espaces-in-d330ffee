@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur d&#x27;Ambiance Lumineuse pour Espaces Intérieurs | Paramètres d&#x27;Ambiance</title>
+    <meta name="description" content="Créez des palettes d">
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --primary-color: #58a6ff;
+            --accent-color: #8b949e;
+            --border-color: #30363d;
+            --gradient-start: #0f151c;
+            --gradient-end: #1a2028;
+            --font-family-grotesk: "Inter", sans-serif;
+            --font-family-editorial: "Georgia", serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Georgia:wght@400;700&display=swap');
+
+        body {
+            font-family: var(--font-family-grotesk);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 40px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            border-bottom: 1px solid var(--border-color);
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-family: var(--font-family-grotesk);
+            font-weight: 700;
+            font-size: 2.8em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-family: var(--font-family-editorial);
+            font-size: 1.2em;
+            color: var(--accent-color);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-family: var(--font-family-grotesk);
+            font-weight: 600;
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        select, input[type="range"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border-radius: 5px;
+            box-sizing: border-box;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        select {
+            height: 40px;
+        }
+
+        input[type="range"] {
+            height: 5px;
+            background: var(--border-color);
+            outline: none;
+            opacity: 0.7;
+            transition: opacity .2s;
+        }
+
+        input[type="range"]:hover {
+            opacity: 1;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            cursor: pointer;
+            border: 1px solid var(--primary-color);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            cursor: pointer;
+            border: 1px solid var(--primary-color);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #72baff;
+            transform: translateY(-2px);
+        }
+
+        .result-section {
+            display: none;
+            padding: 25px;
+            border-left: 5px solid var(--primary-color);
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 200px;
+        }
+
+        .result-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(88, 166, 255, 0.05) 0%, rgba(88, 166, 255, 0) 50%);
+            pointer-events: none;
+        }
+
+        .result-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .result-content h3 {
+            font-family: var(--font-family-grotesk);
+            font-weight: 600;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .result-content p {
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .result-content strong {
+            color: var(--primary-color);
+        }
+
+        .result-content .color-swatch {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .ambiance-preview {
+            margin-top: 25px;
+            padding: 20px;
+            border: 1px dashed var(--accent-color);
+            border-radius: 8px;
+            background-color: var(--bg-color);
+            text-align: center;
+            transition: background-color 0.5s ease;
+        }
+
+        .ambiance-preview span {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: var(--accent-color);
+        }
+
+        .seo-section {
+            width: 90%;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 30px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .seo-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .seo-section p {
+            font-family: var(--font-family-editorial);
+            font-size: 1em;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .seo-section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
+            color: var(--accent-color);
+        }
+
+        .seo-section li {
+            margin-bottom: 8px;
+        }
+    </style>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://generateur-d-ambiance-lumineuse-pour-espaces-in-d330ffee.onrender.com">
+    <meta property="og:title" content="Générateur d&#x27;Ambiance Lumineuse pour Espaces Intérieurs">
+    <meta property="og:description" content="Créez des palettes d">
+    <meta property="og:url" content="https://generateur-d-ambiance-lumineuse-pour-espaces-in-d330ffee.onrender.com">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Générateur d'Ambiance Lumineuse pour Espaces Intérieurs", "description": "Créez des palettes d", "url": "https://generateur-d-ambiance-lumineuse-pour-espaces-in-d330ffee.onrender.com", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
+</head>
+<body data-site-slug="generateur-d-ambiance-lumineuse-pour-espaces-in-d330ffee" data-runtime-mode="palette_generator">
+    <header>
+        <h1>Générateur d'Ambiance Lumineuse</h1>
+        <p>Créez des palettes d'éclairage personnalisées pour vos espaces intérieurs. Harmonisez la lumière avec l'heure, la saison et l'ambiance désirée pour une atmosphère parfaite.</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Paramètres d'Ambiance</h2>
+            <form id="tool-form">
+                <label for="heure">Heure de la journée :</label>
+                <select id="heure" name="heure">
+                    <option value="matin">Matin (6h-10h)</option>
+                    <option value="jour">Jour (10h-17h)</option>
+                    <option value="soir">Soir (17h-21h)</option>
+                    <option value="nuit">Nuit (21h-6h)</option>
+                </select>
+
+                <label for="saison">Saison :</label>
+                <select id="saison" name="saison">
+                    <option value="printemps">Printemps</option>
+                    <option value="ete">Été</option>
+                    <option value="automne">Automne</option>
+                    <option value="hiver">Hiver</option>
+                </select>
+
+                <label for="ambiance">Ambiance souhaitée :</label>
+                <select id="ambiance" name="ambiance">
+                    <option value="reposante">Reposante et Détente</option>
+                    <option value="dynamique">Dynamique et Créative</option>
+                    <option value="cosy">Chaleureuse et Cosy</option>
+                    <option value="elegante">Élégante et Sophistiquée</option>
+                </select>
+
+                <label for="temperature">Température de couleur (Kelvin) : <span id="temperature-value">2700K</span></label>
+                <input type="range" id="temperature" name="temperature" min="2000" max="6500" value="2700" step="100">
+
+                <label for="intensite">Intensité Lumineuse (%) : <span id="intensite-value">70%</span></label>
+                <input type="range" id="intensite" name="intensite" min="10" max="100" value="70" step="5">
+
+                <button type="submit" id="tool-submit">Générer l'Ambiance</button>
+            </form>
+        </div>
+
+        <div class="card result-section" id="tool-result">
+            <div class="result-content">
+                <h2 id="result-headline">Votre Palette Lumineuse Idéale</h2>
+                <p>Voici la recommandation pour votre ambiance :</p>
+                <p><strong>Température de Couleur :</strong> <span id="result-temp"></span> <span class="color-swatch" id="color-swatch-temp"></span></p>
+                <p><strong>Intensité :</strong> <span id="result-intensite"></span></p>
+                <p><strong>Ambiance suggérée :</strong> <span id="result-ambiance-text"></span></p>
+                <div class="ambiance-preview" id="ambiance-preview">
+                    Prévisualisation de l'ambiance
+                    <span>L'impact visuel peut varier selon les écrans.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="seo-section">
+        <h2>Optimiser l'Éclairage de Votre Intérieur : Guide et Outils</h2>
+        <p>Dans l'univers du design d'intérieur, l'éclairage ne se limite pas à la simple fonctionnalité ; il est un pilier fondamental de la création d'une atmosphère. Un bon éclairage peut transformer radicalement une pièce, influençant notre humeur, notre productivité et notre bien-être général. Pour les architectes d'intérieur, les propriétaires soucieux de leur cadre de vie ou les agents immobiliers valorisant leurs biens, comprendre et maîtriser la lumière est essentiel.</p>
+        <p>Notre générateur d'ambiance lumineuse vous offre une approche novatrice pour explorer les multiples facettes de l'éclairage. Fini les tâtonnements ! Visualisez l'impact de différentes températures de couleur (du blanc chaud cosy au blanc froid énergisant) et d'intensités lumineuses variées, adaptées à chaque moment de la journée et à toutes les saisons. Que vous cherchiez à créer un espace de travail stimulant, une chambre reposante ou un salon accueillant pour vos convives, notre outil est là pour vous guider.</p>
+        <p>Les mots-clés qui résonnent avec vos besoins :</p>
+        <ul>
+            <li><strong>Lumière ambiante</strong> : Fondamentale pour l'atmosphère générale d'une pièce.</li>
+            <li><strong>Température de couleur Kelvin</strong> : Mesure cruciale pour définir le rendu de la lumière (chaude ou froide).</li>
+            <li><strong>Éclairage intérieur design</strong> : Des solutions esthétiques et fonctionnelles pour chaque espace.</li>
+            <li><strong>Ambiance lumineuse maison</strong> : Créez une atmosphère personnalisée dans chaque pièce.</li>
+            <li><strong>Conception éclairage professionnel</strong> : Des outils pour les experts en aménagement.</li>
+            <li><strong>Simulation éclairage avant achat</strong> : Testez l'effet de vos choix avant d'investir.</li>
+            <li><strong>Harmonie lumineuse</strong> : Atteignez l'équilibre parfait entre confort et esthétique.</li>
+            <li><strong>Impact éclairage sur humeur</strong> : Comprenez l'influence de la lumière sur le bien-être.</li>
+        </ul>
+        <p>Notre générateur vous aide à concrétiser vos idées d'éclairage, en vous offrant des recommandations concrètes et une prévisualisation visuelle. Prenez le contrôle de l'ambiance de vos espaces et illuminez votre quotidien avec intelligence et style.</p>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('tool-form');
+            const submitButton = document.getElementById('tool-submit');
+            const resultSection = document.getElementById('tool-result');
+            const resultTemp = document.getElementById('result-temp');
+            const resultIntensite = document.getElementById('result-intensite');
+            const resultAmbianceText = document.getElementById('result-ambiance-text');
+            const colorSwatchTemp = document.getElementById('color-swatch-temp');
+            const ambiancePreview = document.getElementById('ambiance-preview');
+            const temperatureInput = document.getElementById('temperature');
+            const temperatureValueSpan = document.getElementById('temperature-value');
+            const intensiteInput = document.getElementById('intensite');
+            const intensiteValueSpan = document.getElementById('intensite-value');
+
+            temperatureInput.addEventListener('input', () => {
+                temperatureValueSpan.textContent = `${temperatureInput.value}K`;
+            });
+
+            intensiteInput.addEventListener('input', () => {
+                intensiteValueSpan.textContent = `${intensiteInput.value}%`;
+            });
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const heure = document.getElementById('heure').value;
+                const saison = document.getElementById('saison').value;
+                const ambiance = document.getElementById('ambiance').value;
+                const temperature = parseInt(temperatureInput.value);
+                const intensite = parseInt(intensiteInput.value);
+
+                let recommendedTemp = temperature;
+                let recommendedIntensite = intensite;
+                let ambianceText = '';
+                let bgColor = '#0d1117'; // Default for preview
+
+                // Adjust based on heure
+                if (heure === 'matin') {
+                    if (recommendedTemp > 4000) recommendedTemp = 4000;
+                    if (recommendedIntensite < 50) recommendedIntensite = 50;
+                    ambianceText += 'Une lumière fraîche et dynamisante pour bien commencer la journée. ';
+                } else if (heure === 'jour') {
+                    if (recommendedTemp < 4500) recommendedTemp = 4500;
+                    if (recommendedIntensite < 70) recommendedIntensite = 70;
+                    ambianceText += 'Une lumière neutre et claire pour une productivité optimale. ';
+                } else if (heure === 'soir') {
+                    if (recommendedTemp > 3000) recommendedTemp = 3000;
+                    if (recommendedIntensite > 60) recommendedIntensite = 60;
+                    ambianceText += 'Une lumière chaude et douce pour se détendre après la journée. ';
+                } else if (heure === 'nuit') {
+                    if (recommendedTemp > 2500) recommendedTemp = 2500;
+                    if (recommendedIntensite > 30) recommendedIntensite = 30;
+                    ambianceText += 'Une lumière très chaude et tamisée pour un repos optimal. ';
+                }
+
+                // Adjust based on saison
+                if (saison === 'printemps' || saison === 'ete') {
+                    if (recommendedTemp < 3500) recommendedTemp += 500; // Slightly cooler
+                    if (recommendedIntensite < 60) recommendedIntensite += 10;
+                    ambianceText += 'Écho à la clarté naturelle de l\'extérieur. ';
+                } else { // automne, hiver
+                    if (recommendedTemp > 3000) recommendedTemp -= 500; // Slightly warmer
+                    if (recommendedIntensite > 70) recommendedIntensite -= 10;
+                    ambianceText += 'Apport de chaleur et de confort. ';
+                }
+
+                // Adjust based on ambiance
+                if (ambiance === 'reposante') {
+                    if (recommendedTemp > 2700) recommendedTemp = 2700;
+                    if (recommendedIntensite > 40) recommendedIntensite = 40;
+                    ambianceText += 'Idéal pour la relaxation et la lecture. ';
+                } else if (ambiance === 'dynamique') {
+                    if (recommendedTemp < 4000) recommendedTemp = 4000;
+                    if (recommendedIntensite < 80) recommendedIntensite = 80;
+                    ambianceText += 'Parfait pour le travail ou les activités nécessitant de la concentration. ';
+                } else if (ambiance === 'cosy') {
+                    if (recommendedTemp > 2500) recommendedTemp = 2500;
+                    if (recommendedIntensite > 50) recommendedIntensite = 50;
+                    ambianceText += 'Crée une atmosphère intime et chaleureuse. ';
+                } else if (ambiance === 'elegante') {
+                    if (recommendedTemp < 3000 || recommendedTemp > 4500) recommendedTemp = 3500; // Neutral elegant
+                    if (recommendedIntensite < 60) recommendedIntensite = 60;
+                    ambianceText += 'Met en valeur les détails avec subtilité. ';
+                }
+
+                // Ensure bounds
+                recommendedTemp = Math.max(2000, Math.min(6500, recommendedTemp));
+                recommendedIntensite = Math.max(10, Math.min(100, recommendedIntensite));
+
+                resultTemp.textContent = `${recommendedTemp}K`;
+                resultIntensite.textContent = `${recommendedIntensite}%`;
+                resultAmbianceText.textContent = ambianceText.trim();
+
+                // Convert Kelvin to RGB approximation for color swatch and preview background
+                function kelvinToRgb(k) {
+                    let r, g, b;
+                    k /= 100;
+                    if (k <= 66) {
+                        r = 255;
+                        g = 99.4708025861 * Math.log(k) - 161.1195681661;
+                        if (k < 19) b = 0;
+                        else b = 138.5177312231 * Math.log(k - 10) - 305.0447927307;
+                    } else {
+                        r = 329.698727446 * Math.pow(k - 60, -0.1332047592);
+                        g = 288.1221695283 * Math.pow(k - 60, -0.0755148492);
+                        b = 255;
+                    }
+                    return {
+                        r: Math.min(255, Math.max(0, Math.round(r))),
+                        g: Math.min(255, Math.max(0, Math.round(g))),
+                        b: Math.min(255, Math.max(0, Math.round(b)))
+                    };
+                }
+
+                const rgb = kelvinToRgb(recommendedTemp);
+                const brightnessFactor = recommendedIntensite / 100;
+
+                // Adjust brightness for the background preview to make text readable
+                const previewR = Math.round(rgb.r * brightnessFactor * 0.5); // reduced brightness for background
+                const previewG = Math.round(rgb.g * brightnessFactor * 0.5);
+                const previewB = Math.round(rgb.b * brightnessFactor * 0.5);
+                
+                // For the swatch, represent the color more directly, but still influenced by intensity
+                const swatchR = Math.round(rgb.r * brightnessFactor);
+                const swatchG = Math.round(rgb.g * brightnessFactor);
+                const swatchB = Math.round(rgb.b * brightnessFactor);
+
+                colorSwatchTemp.style.backgroundColor = `rgb(${swatchR}, ${swatchG}, ${swatchB})`;
+                ambiancePreview.style.backgroundColor = `rgb(${previewR}, ${previewG}, ${previewB})`;
+                ambiancePreview.style.color = (previewR + previewG + previewB) / 3 > 128 ? 'black' : 'white'; // Contrast text for preview
+
+                resultSection.style.display = 'block';
+            });
+        });
+    </script>
+<div id="qa-smoke-result" hidden></div>
+<script id="farmbuilder-affiliate-helper">
+(function () {
+  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};
+  document.addEventListener("click", function (event) {
+    const target = event.target.closest("[data-affiliate-slot]");
+    if (!target) return;
+    const slot = target.getAttribute("data-affiliate-slot");
+    const href = window.__UTILITY_AFFILIATE_MAP[slot];
+    if (!href) return;
+    if (target.tagName && target.tagName.toLowerCase() === "a") {
+      target.setAttribute("href", href);
+      target.removeAttribute("rel");
+      return;
+    }
+    event.preventDefault();
+    window.open(href, "_blank");
+  }, true);
+})();
+</script>
+<script id="farmbuilder-functional-qa">
+(function () {
+  function marker() {
+    let node = document.getElementById("qa-smoke-result");
+    if (node) return node;
+    node = document.createElement("div");
+    node.id = "qa-smoke-result";
+    node.hidden = true;
+    document.body.appendChild(node);
+    return node;
+  }
+
+  let qaFinished = false;
+  let qaWatchdog = null;
+
+  function normalize(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function findForm() {
+    return document.getElementById("tool-form") || document.querySelector("form");
+  }
+
+  function findResult() {
+    return (
+      document.getElementById("tool-result") ||
+      document.querySelector("[data-result]") ||
+      document.querySelector(".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis")
+    );
+  }
+
+  function primaryAction(form) {
+    if (!form) return null;
+    return (
+      document.getElementById("tool-submit") ||
+      form.querySelector("#tool-submit") ||
+      form.querySelector("[data-primary-action]") ||
+      form.querySelector("button[type=submit]") ||
+      form.querySelector("button") ||
+      form.querySelector("input[type=submit]")
+    );
+  }
+
+  function resultSignature(node) {
+    if (!node) return "";
+    const text = normalize(node.textContent);
+    const html = normalize(node.innerHTML).slice(0, 600);
+    return `${text}||${html}`;
+  }
+
+  function resultHeadline(node) {
+    if (!node) return "";
+    const heading = node.querySelector("h1, h2, h3, strong, b");
+    return normalize(heading ? heading.textContent : "");
+  }
+
+  function sampleText(field) {
+    const key = `${field.id || ""} ${field.name || ""} ${field.placeholder || ""}`.toLowerCase();
+    if (/email/.test(key)) return "bonjour@example.com";
+    if (/url|site|website|lien/.test(key)) return "https://example.com/offre-solaire";
+    if (/phone|tel|mobile/.test(key)) return "0612345678";
+    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return "Paris";
+    if (/orientation/.test(key)) return "sud";
+    if (/keyword|theme|topic|sujet|subject/.test(key)) return "energie solaire domestique";
+    if (/titre|title/.test(key)) return "Simulateur solaire maison";
+    if (/nom|name|project/.test(key)) return "Projet Horizon";
+    if (/description|notes|content|message/.test(key)) return "Maison individuelle exposee sud avec toiture exploitable.";
+    return field.placeholder || "France";
+  }
+
+  function sampleNumber(field) {
+    const key = `${field.id || ""} ${field.name || ""}`.toLowerCase();
+    if (/inclinaison|angle|slope/.test(key)) return "30";
+    if (/surface|size|m2|sqm/.test(key)) return "28";
+    if (/annee|year/.test(key)) return "2024";
+    if (/prix|price|budget|cost|amount|montant/.test(key)) return "12000";
+    const min = Number(field.min || "");
+    const max = Number(field.max || "");
+    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {
+      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));
+    }
+    if (Number.isFinite(min)) return String(Math.max(min, 12));
+    if (Number.isFinite(max)) return String(Math.min(max, 12));
+    return field.value || "12";
+  }
+
+  function applySample(field) {
+    const tag = (field.tagName || "").toLowerCase();
+    const type = (field.type || "").toLowerCase();
+    if (field.disabled) return;
+    if (type === "hidden" || type === "submit" || type === "button" || type === "reset" || type === "image" || type === "file") {
+      return;
+    }
+    const currentValue = normalize(field.value);
+    if (tag === "select") {
+      if (currentValue) return;
+      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];
+      if (option) field.value = option.value;
+      return;
+    }
+    if (type === "checkbox") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "radio") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "date") {
+      if (currentValue) return;
+      field.value = "2026-03-01";
+      return;
+    }
+    if (type === "email") {
+      if (currentValue) return;
+      field.value = "bonjour@example.com";
+      return;
+    }
+    if (type === "url") {
+      if (currentValue) return;
+      field.value = "https://example.com/offre-solaire";
+      return;
+    }
+    if (type === "tel") {
+      if (currentValue) return;
+      field.value = "0612345678";
+      return;
+    }
+    if (type === "color") {
+      if (currentValue) return;
+      field.value = "#2f855a";
+      return;
+    }
+    if (type === "number" || type === "range") {
+      if (currentValue) return;
+      field.value = sampleNumber(field);
+      return;
+    }
+    if (currentValue) return;
+    field.value = sampleText(field);
+  }
+
+  function stamp(status, detail, headline, primary) {
+    if (qaFinished) return;
+    qaFinished = true;
+    if (qaWatchdog) {
+      window.clearTimeout(qaWatchdog);
+      qaWatchdog = null;
+    }
+    const node = marker();
+    node.dataset.status = status;
+    node.dataset.mode = "native-form";
+    node.dataset.detail = detail || "";
+    node.dataset.headline = headline || "";
+    node.dataset.primary = primary || "";
+    node.dataset.viewport = window.innerWidth <= 640 ? "mobile" : "desktop";
+    window.setTimeout(function () {
+      try {
+        window.stop();
+      } catch (_error) {}
+    }, 0);
+  }
+
+  function installModalGuards() {
+    const noop = function () {};
+    const approve = function () { return true; };
+    const empty = function () { return ""; };
+    try { window.alert = noop; } catch (_error) {}
+    try { window.confirm = approve; } catch (_error) {}
+    try { window.prompt = empty; } catch (_error) {}
+  }
+
+  function triggerAction(form, action) {
+    try {
+      if (typeof form.requestSubmit === "function") {
+        form.requestSubmit(action || undefined);
+        return;
+      }
+    } catch (_error) {}
+    if (action && typeof action.click === "function") {
+      action.click();
+      return;
+    }
+    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+  }
+
+  function inspectResult(before, attemptsLeft) {
+    const result = findResult();
+    if (!result) {
+      stamp("fail", "La zone de resultat est introuvable.", "");
+      return;
+    }
+    const after = resultSignature(result);
+    const text = normalize(result.textContent);
+    if (after && after !== before && text.length >= 24) {
+      const primary = result.querySelector("a[href], button[data-href], [data-primary-url]") || document.querySelector("#tool-result a[href]");
+      stamp("pass", "Le formulaire natif a mis a jour la zone de resultat.", resultHeadline(result), primary ? (primary.getAttribute("href") || primary.getAttribute("data-primary-url") || "") : "");
+      return;
+    }
+    if (attemptsLeft > 0) {
+      window.setTimeout(function () {
+        inspectResult(before, attemptsLeft - 1);
+      }, 250);
+      return;
+    }
+    stamp("fail", "La zone de resultat n'a pas renvoye de contenu exploitable.", resultHeadline(result));
+  }
+
+  function runSmoke() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("__qa") !== "functional") return;
+    qaWatchdog = window.setTimeout(function () {
+      stamp("fail", "QA smoke timed out before the page reported a usable result.", "");
+    }, 7000);
+    const form = findForm();
+    if (!form) {
+      stamp("fail", "Le formulaire principal est introuvable.", "");
+      return;
+    }
+    const result = findResult();
+    const before = resultSignature(result);
+    installModalGuards();
+    try {
+      form.querySelectorAll("input, select, textarea").forEach(applySample);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke sample failed: ${error.message}` : "QA smoke sample failed before submit.", "");
+      return;
+    }
+    const action = primaryAction(form);
+    try {
+      triggerAction(form, action);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke submit failed: ${error.message}` : "QA smoke submit failed.", "");
+      return;
+    }
+    inspectResult(before, 10);
+  }
+
+  window.addEventListener("error", function (event) {
+    const message = event && event.message ? event.message : "JavaScript runtime error during QA smoke.";
+    stamp("fail", `QA smoke JS error: ${message}`, "");
+  }, { once: true });
+
+  window.addEventListener("unhandledrejection", function (event) {
+    const reason = event && event.reason;
+    const detail = typeof reason === "string"
+      ? reason
+      : reason && reason.message
+        ? reason.message
+        : "Unhandled promise rejection during QA smoke.";
+    stamp("fail", `QA smoke rejection: ${detail}`, "");
+  }, { once: true });
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      window.setTimeout(runSmoke, 60);
+    }, { once: true });
+  } else {
+    window.setTimeout(runSmoke, 60);
+  }
+})();
+</script>
+</body>
+</html>
